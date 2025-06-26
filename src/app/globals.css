@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --dark: #151515;
+  --light: #FFF;
+  --medium: #fff9e4;
+  --red: #F03986;
+  --red-dark: #571530;
+  --green: #43DD65;
+  --green-dark: #15451F;
+  --yellow: #F2CA3C;
+  --yellow-dark: #594A16;
+  --blue: #3C9BF2;
+  --blue-dark: #163959;
+}
+
+@theme inline {
+  --color-dark: var(--dark);
+  --color-light: var(--light);
+  --color-medium: var(--medium);
+  --color-red: var(--red);
+  --color-red-dark: var(--red-dark);
+  --color-green: var(--green);
+  --color-green-dark: var(--green-dark);
+  --color-yellow: var(--yellow);
+  --color-yellow-dark: var(--yellow-dark);
+  --color-blue: var(--blue);
+  --color-blue-dark: var(--blue-dark);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  grid-template-areas: 
+    'header'
+    'main'
+    'footer'
+  ;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+  height: 100vh;
+
+  header {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: main;
+    overflow: auto;
+    background: var(--medium);
+    color: var(--dark);
+  }
+
+  h1, h2, h3, h4, h5, h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}

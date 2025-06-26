@@ -1,0 +1,32 @@
+@use 'sass:list';
+
+$background-color-list:
+    #F03986,
+    #43DD65,
+    #F2CA3C,
+    #3C9BF2,
+    ;
+    
+$text-color-list:
+    #571530,
+    #15451F,
+    #594A16,
+    #163959
+;
+
+.answer-button {
+    
+    @for $i from 1 through list.length($background-color-list) {
+        &:nth-of-type(#{list.length($background-color-list)}n + #{$i}) {
+            background-color: list.nth($background-color-list, $i);
+        }
+    }
+    @for $i from 1 through list.length($text-color-list) {
+        &:nth-of-type(#{list.length($text-color-list)}n + #{$i}) {
+            color: list.nth($text-color-list, $i);
+            border: 4px solid list.nth($text-color-list, $i);
+            border-inline-end: 8px solid list.nth($text-color-list, $i);
+            border-block-end: 8px solid list.nth($text-color-list, $i);
+        }
+    }
+}
